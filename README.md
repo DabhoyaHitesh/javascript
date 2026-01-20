@@ -156,47 +156,135 @@ let temp_d_let = 24;
 
 <hr />
 
-<h2>6. Summary Table</h2>
 
-<table>
-  <tr>
-    <th>Feature</th>
-    <th>var</th>
-    <th>let</th>
-    <th>const</th>
-  </tr>
-  <tr>
-    <td>Scope</td>
-    <td>Function</td>
-    <td>Block</td>
-    <td>Block</td>
-  </tr>
-  <tr>
-    <td>Redeclaration</td>
-    <td>Yes</td>
-    <td>No</td>
-    <td>No</td>
-  </tr>
-  <tr>
-    <td>Reassignment</td>
-    <td>Yes</td>
-    <td>Yes</td>
-    <td>No</td>
-  </tr>
-  <tr>
-    <td>Hoisting Value</td>
-    <td>undefined</td>
-    <td>Error</td>
-    <td>Error</td>
-  </tr>
-  <tr>
-    <td>Temporal Dead Zone</td>
-    <td>No</td>
-    <td>Yes</td>
-    <td>Yes</td>
-  </tr>
-</table>
+    <h1>JavaScript Data Types</h1>
+    <p>
+        This document explains <strong>JavaScript data types</strong> and the difference between
+        <strong>Primitive</strong> and <strong>Non-Primitive (Reference)</strong> data types.
+        JavaScript is a <strong>dynamically typed language</strong>, meaning variable types are
+        determined at runtime.
+    </p>
 
+    <h2>1. Primitive Data Types</h2>
+    <p>
+        Primitive data types store <strong>actual values</strong>.
+        When copied, a <strong>new independent value</strong> is created.
+    </p>
+
+    <h3>Primitive Types</h3>
+    <ul>
+        <li>string</li>
+        <li>number</li>
+        <li>boolean</li>
+        <li>null</li>
+        <li>undefined</li>
+        <li>symbol</li>
+        <li>bigint</li>
+    </ul>
+
+    <h3>Example</h3>
+    <pre><code>
+let a = 12;
+let b = a;   // value copy
+a = a + 3;
+    </code></pre>
+
+    <h3>String</h3>
+    <pre><code>
+let d = "name";
+d = 'username';
+d = `firstname`;
+    </code></pre>
+
+    <h3>Number</h3>
+    <pre><code>
+let e = 12;
+e = 12.25;
+    </code></pre>
+
+    <h3>Boolean</h3>
+    <pre><code>
+let f = true;
+f = false;
+    </code></pre>
+
+    <h3>Null</h3>
+    <pre><code>
+let g = null;
+    </code></pre>
+
+    <h3>Undefined</h3>
+    <pre><code>
+let h;
+    </code></pre>
+
+    <h3>Symbol</h3>
+    <pre><code>
+let u1 = Symbol("uid");
+let u2 = Symbol("uid");
+
+let obj = { uid: 1, name: "test", email: "test@test.com" };
+let u3 = Symbol("uid");
+obj[u3] = "001";
+    </code></pre>
+
+    <h3>BigInt</h3>
+    <pre><code>
+let number = 9007199254740991;
+number = number + 6;
+
+let num2 = 9007199254740991n;
+num2 + 3n;
+    </code></pre>
+
+    <h2>2. Non-Primitive (Reference) Data Types</h2>
+    <p>
+        Non-primitive data types store <strong>references</strong> to memory.
+        When copied, both variables point to the <strong>same reference</strong>.
+    </p>
+
+    <h3>Non-Primitive Types</h3>
+    <ul>
+        <li>Array</li>
+        <li>Object</li>
+        <li>Function</li>
+    </ul>
+
+    <h3>Array Example</h3>
+    <pre><code>
+let temp_a = [1, 2, 3];
+let temp_b = temp_a;
+temp_b.pop();
+    </code></pre>
+
+    <h3>Object Example</h3>
+    <pre><code>
+let obj = {
+  name: "test",
+  age: 9,
+  phone_number: 558998554
+};
+    </code></pre>
+
+    <h3>Function Example</h3>
+    <pre><code>
+function name(params) {}
+    </code></pre>
+
+    <h2>Key Concepts</h2>
+    <ul>
+        <li>Primitive Types → Copy by value</li>
+        <li>Non-Primitive Types → Copy by reference</li>
+        <li>Dynamic Typing → Type decided at runtime</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>
+        Understanding JavaScript data types is essential for writing clean,
+        efficient, and bug-free code.
+    </p>
+
+    <p><strong>Happy Coding 🚀</strong></p>
 
 </body>
 </html>

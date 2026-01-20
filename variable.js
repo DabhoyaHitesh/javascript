@@ -110,10 +110,11 @@ const --> hoist --> error
 //Why  : it is functional scope
 
 //ex -5 
-const person = {name:"demo"};
-console.log(person);
-person.name = "user";
-person= {};
+const person = {name:"demo", gender: "male"};
+// let user =  {name:"demo", gender: "male"}
+// console.log(person);
+// person.name = "user";
+// person= {};
 //Answer on Error : Uncaught TypeError: Assignment to constant variable.
 //Why  : using const variable not change the value
 
