@@ -64,14 +64,14 @@ num2 + 3n
 
 // <-----Non-Primitive Data Types ---->
 // types: arrays [], objects{}, functions ()
-let temp_array = ["name","age","phone number"];
-let obj = {name: "test", age: 9, phone_number:558998554}
-function name(params) {}
+// let temp_array = ["name","age","phone number"];
+// let obj = {name: "test", age: 9, phone_number:558998554}
+// function name(params) {}
 
-//Dynamic Typing
-let temp_d = "name";
-temp_d = 123;
-temp_d = {};
+// //Dynamic Typing
+// let temp_d = "name";
+// temp_d = 123;
+// temp_d = {};
 // javascript --> typescript
 //type of quirks
 // type of 12
@@ -91,6 +91,53 @@ temp_d = {};
 // ex. if(null){}, js convert it into false 
 // ex. if(-1){}, js convert it into true 
 // all --> true
+
+
+
+//Examples
+
+// //Example 1 :
+// console.log(true + false); 
+// //output : 1
+
+
+
+// //Example 2 :
+// console.log(null + 1);
+// //output : 1
+
+
+// //Example 3 :
+// console.log("12" + 12);
+// //output : 1212
+
+
+// //Example 4 :
+// console.log(!!undefined);
+// //output : false
+
+
+// //Example 5 :
+// console.log("12" - 1);
+// //output : 11
+
+
+// //Example 6 :
+// console.log("hello" + 5);
+// //output : hello5
+
+//Example 7 :
+let x;
+console.log(x);
+//output : undefined
+
+let y = null;
+console.log(y);
+//output : null
+
+
+
+
 
 
 

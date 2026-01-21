@@ -284,7 +284,146 @@ function name(params) {}
         efficient, and bug-free code.
     </p>
 
-    <p><strong>Happy Coding 🚀</strong></p>
+    <h1>📘 JavaScript Operators</h1>
+
+<p>This document explains different types of JavaScript operators with examples.</p>
+
+<hr>
+
+<h2>1️⃣ Arithmetic Operators</h2>
+<ul>
+    <li><b>+</b> Addition / Concatenation<br>
+        Example: <code>1 + 2 → 3</code>, <code>"user" + "name" → username</code>
+    </li>
+    <li><b>-</b> Subtraction<br>
+        Example: <code>2 - 1 → 1</code>
+    </li>
+    <li><b>*</b> Multiplication<br>
+        Example: <code>25 * 2 → 50</code>
+    </li>
+    <li><b>/</b> Division<br>
+        Example: <code>240 / 2 → 120</code>
+    </li>
+    <li><b>%</b> Modulus (Remainder)<br>
+        Example: <code>9 % 2 → 1</code>
+    </li>
+    <li><b>**</b> Exponentiation<br>
+        Example: <code>2 ** 3 → 8</code>
+    </li>
+</ul>
+
+<hr>
+
+<h2>2️⃣ Comparison Operators</h2>
+<p>Comparison operators always return <b>true</b> or <b>false</b>.</p>
+
+<ul>
+    <li><b>==</b> Equal to (value only)<br>
+        Example: <code>12 == "12" → true</code>
+    </li>
+    <li><b>===</b> Strict equal (value + type)<br>
+        Example: <code>12 === "12" → false</code>
+    </li>
+    <li><b>!=</b> Not equal<br>
+        Example: <code>12 != 13 → true</code>
+    </li>
+    <li><b>!==</b> Strict not equal<br>
+        Example: <code>12 !== "12" → true</code>
+    </li>
+    <li><b>&gt;, &lt;, &gt;=, &lt;=</b> Greater / Less comparisons</li>
+</ul>
+
+<hr>
+
+<h2>3️⃣ Assignment Operators</h2>
+<ul>
+    <li><code>=</code> Assign value</li>
+    <li><code>+=</code> Add and assign</li>
+    <li><code>-=</code> Subtract and assign</li>
+    <li><code>*=</code> Multiply and assign</li>
+    <li><code>/=</code> Divide and assign</li>
+    <li><code>%=</code> Remainder and assign</li>
+</ul>
+
+<hr>
+
+<h2>4️⃣ Logical Operators</h2>
+<ul>
+    <li><b>&&</b> AND</li>
+    <li><b>||</b> OR</li>
+    <li><b>!</b> NOT</li>
+</ul>
+
+<p><b>Example:</b></p>
+<pre>
+true && false → false
+true || false → true
+!true → false
+</pre>
+
+<hr>
+
+<h2>5️⃣ Unary Operators</h2>
+<ul>
+    <li><b>+</b> Convert string to number<br>
+        Example: <code>+"5" → 5</code>
+    </li>
+    <li><b>-</b> Negative value</li>
+    <li><b>!</b> Logical NOT</li>
+    <li><b>typeof</b> Check data type</li>
+    <li><b>++</b> Increment</li>
+    <li><b>--</b> Decrement</li>
+</ul>
+
+<hr>
+
+<h2>6️⃣ Ternary Operator</h2>
+<p>Short form of if-else</p>
+
+<pre>
+condition ? value_if_true : value_if_false
+</pre>
+
+<p><b>Example:</b></p>
+<pre>
+let result = age >= 18 ? "Adult" : "Minor";
+</pre>
+
+<hr>
+
+<h2>7️⃣ Truthy & Falsy Values</h2>
+<p>Falsy values in JavaScript:</p>
+<ul>
+    <li>0</li>
+    <li>"" (empty string)</li>
+    <li>null</li>
+    <li>undefined</li>
+    <li>NaN</li>
+    <li>false</li>
+</ul>
+
+<hr>
+
+<h2>8️⃣ typeof vs instanceof</h2>
+<ul>
+    <li><b>typeof</b> → Used for primitive data types</li>
+    <li><b>instanceof</b> → Used for reference data types</li>
+</ul>
+
+<pre>
+typeof null → "object"   (JavaScript bug)
+typeof [] → "object"
+[] instanceof Array → true
+</pre>
+
+<hr>
+
+<h2>✅ Conclusion</h2>
+<p>
+This README covers all major JavaScript operators with simple explanations and examples.
+It is useful for beginners, interviews, and quick revision.
+</p>
+
 
 </body>
 </html>
