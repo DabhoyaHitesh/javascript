@@ -1053,6 +1053,596 @@ console.log(multiply5(3));
 <p><b>Output:</b> 15</p>
 
 <hr>
+
+<h1>JavaScript Function Concepts</h1>
+
+<p>
+This document explains important JavaScript concepts like
+<strong>Pure & Impure Functions</strong>,
+<strong>Closures</strong>,
+<strong>Lexical Scope</strong>,
+<strong>IIFE</strong>, and
+<strong>Hoisting</strong>
+with examples.
+</p>
+
+<hr>
+
+<h2>1. Pure vs Impure Functions</h2>
+
+<h3>Pure Function</h3>
+<p>
+A <strong>pure function</strong> always gives the same output for the same input
+and does <strong>not modify any external (outside) state</strong>.
+</p>
+
+<pre><code>
+let a = 10;
+
+function abcd_pure() {
+    console.log("Hello");
+}
+</code></pre>
+
+<div class="note">
+Pure function bahar na variables ne change nathi karti.
+</div>
+
+<h3>Impure Function</h3>
+<p>
+An <strong>impure function</strong> either:
+</p>
+<ul>
+    <li>Modifies external state</li>
+    <li>OR gives different output for the same input</li>
+</ul>
+
+<pre><code>
+function abcd_impure() {
+    a++;
+    console.log(a);
+}
+</code></pre>
+
+<div class="note">
+Aa function bahar na variable <code>a</code> ne modify kare chhe — so it is impure.
+</div>
+
+<hr>
+
+<h2>2. Closure Function</h2>
+
+<p>
+A <strong>closure</strong> is created when a function remembers and accesses
+variables from its parent function even after the parent function has finished execution.
+</p>
+
+<pre><code>
+function outer() {
+    let count = 0;
+
+    function inner() {
+        count++;
+        console.log(count);
+    }
+
+    return inner;
+}
+
+let fnc5 = outer();
+fnc5();
+</code></pre>
+
+<div class="note">
+Inner function parent function na variables ne access kare chhe — aa closure chhe.
+</div>
+
+<hr>
+
+<h2>3. Lexical Scope</h2>
+
+<p>
+<strong>Lexical scope</strong> means a function can access variables defined
+in its outer (parent) scope.
+</p>
+
+<pre><code>
+function outer1() {
+    let outer_var = "outer function variable";
+
+    function inner1() {
+        let inner_var = "inner function variable";
+        console.log(outer_var);
+
+        function most_inner() {
+            console.log(inner_var);
+            console.log(outer_var);
+
+            let most_inner_var = "most inner function variable";
+
+            function abc() {
+                console.log(most_inner_var);
+                console.log(inner_var);
+                console.log(outer_var);
+            }
+            abc();
+        }
+        most_inner();
+    }
+    inner1();
+}
+
+outer1();
+</code></pre>
+
+<div class="note">
+Nested functions parent variables ne access kari shake — aa lexical scope chhe.
+</div>
+
+<hr>
+
+<h2>4. IIFE (Immediately Invoked Function Expression)</h2>
+
+<p>
+An <strong>IIFE</strong> is a function that runs immediately after it is defined.
+</p>
+
+<pre><code>
+(function () {})();
+
+(function () {
+    console.log("This Is LIFE Function");
+}());
+</code></pre>
+
+<div class="note">
+Function declare karta j call thai jaye — IIFE.
+</div>
+
+<hr>
+
+<h2>5. Hoisting</h2>
+
+<p>
+<strong>Hoisting</strong> allows function declarations to be called before they are defined.
+</p>
+
+<pre><code>
+abcdef();
+
+function abcdef() {
+    console.log("This is Hosting function");
+}
+</code></pre>
+
+<h3>Not Hoisted (Function Expression & Arrow Function)</h3>
+
+<pre><code>
+// hoistedFunction1();
+// let hoistedFunction1 = function () {
+//     console.log("Hoisted Function Expression called");
+// }
+
+// hoistedFunction2();
+// let hoistedFunction2 = () => {
+//     console.log("Hoisted Arrow Function called");
+// }
+</code></pre>
+
+<div class="note">
+Only function declarations are hoisted, not function expressions or arrow functions.
+</div>
+
+<hr>
+
+<h2>Conclusion</h2>
+
+<p>
+These concepts are very important for understanding JavaScript behavior,
+especially in interviews and real-world applications.
+</p>
+
+<h1>JavaScript Arrays</h1>
+
+<p>
+An <strong>Array</strong> is used to store multiple values in a single variable.
+Arrays can store numbers, strings, or mixed data types.
+</p>
+
+<hr>
+
+<h2>1. Creating an Array</h2>
+
+<pre><code>
+let arr = [1, 2, 3, 4];
+</code></pre>
+
+<p>Examples of arrays:</p>
+<ul>
+    <li><code>[1, 2, 3, 4, 5]</code></li>
+    <li><code>["Hello", "A", "B", "C"]</code></li>
+    <li><code>[2, "Bye", "Hello", 50]</code></li>
+</ul>
+
+<hr>
+
+<h2>2. Accessing Array Values</h2>
+
+<p>
+Array index starts from <strong>0</strong>.
+</p>
+
+<pre><code>
+arr[0]; // first value
+arr[3]; // fourth value
+arr[10]; // undefined
+</code></pre>
+
+<div class="note">
+Position (index) starts from 0 → [0, 1, 2, 3]
+</div>
+
+<hr>
+
+<h2>3. Modifying Array Values</h2>
+
+<pre><code>
+arr[0] = 10;
+</code></pre>
+
+<p>
+This replaces the value at index <code>0</code>.
+</p>
+
+<hr>
+
+<h2>4. Array Methods</h2>
+
+<p>
+Array methods are written as:
+</p>
+
+<pre><code>
+array_name.method_name();
+</code></pre>
+
+<hr>
+
+<h3>push() – Add value at the end</h3>
+
+<pre><code>
+let fruits = ["Apple", "Banana", "Mango"];
+fruits.push("Orange");
+</code></pre>
+
+<div class="note">
+Use case: Add new product to existing product list.
+</div>
+
+<hr>
+
+<h3>pop() – Remove last value</h3>
+
+<pre><code>
+fruits.pop();
+</code></pre>
+
+<div class="note">
+Use case: Remove last added product.
+</div>
+
+<hr>
+
+<h3>shift() – Remove first value</h3>
+
+<pre><code>
+arr.shift();
+</code></pre>
+
+<div class="note">
+Use case: Automatically remove old data.
+</div>
+
+<hr>
+
+<h3>unshift() – Add value at the beginning</h3>
+
+<pre><code>
+arr.unshift(10);
+</code></pre>
+
+<div class="note">
+Use case: Add latest data on top.
+</div>
+
+<hr>
+
+<h2>5. splice() – Remove values from specific position</h2>
+
+<p>
+<code>splice(startIndex, deleteCount)</code>
+</p>
+
+<pre><code>
+let e = [10, 20, 30, 40, 50];
+e.splice(3, 2);
+</code></pre>
+
+<div class="note">
+Use case: Delete multiple selected messages at once.
+</div>
+
+<hr>
+
+<h2>6. slice() – Copy values into new array</h2>
+
+<p>
+<code>slice(startIndex, endIndex)</code><br>
+Start index is included, end index is excluded.
+</p>
+
+<pre><code>
+let f = [100, 50, 25, 0];
+let new_f = f.slice(1, 3);
+</code></pre>
+
+<pre><code>
+let products = ["Shirt", "Pant", "Jeans", "Socks", "Belt"];
+let new_products = products.slice(1, 4);
+</code></pre>
+
+<div class="note">
+Use case: Generate reports or save filtered data.
+</div>
+
+<hr>
+
+<h2>7. splice vs slice</h2>
+
+<ul>
+    <li><strong>splice</strong> → modifies original array</li>
+    <li><strong>slice</strong> → creates a new array</li>
+</ul>
+
+<hr>
+
+<h2>8. reverse() – Reverse array order</h2>
+
+<pre><code>
+let g = [25, 30, 35, 40, 85];
+g.reverse();
+</code></pre>
+
+<div class="note">
+Use case: Show latest data first on frontend.
+</div>
+
+<hr>
+
+<h2>9. sort() – Sort array</h2>
+
+<h3>Default sort</h3>
+<pre><code>
+let h = [50, 20, 80, 10, 40];
+h.sort();
+</code></pre>
+
+<h3>Ascending order</h3>
+<pre><code>
+let h = [11, 62, 3, 4, 25];
+h.sort(function(a, b) {
+    return a - b;
+});
+</code></pre>
+
+<h3>Descending order</h3>
+<pre><code>
+let h = [11, 62, 3, 4, 25];
+h.sort(function(a, b) {
+    return b - a;
+});
+</code></pre>
+
+<div class="note">
+Use case: Sort product prices from low to high or high to low.
+</div>
+
+<hr>
+
+<h2>Conclusion</h2>
+
+<p>
+Arrays and their methods are essential in JavaScript for handling data efficiently,
+especially in real-world applications like product lists, reports, and UI updates.
+</p>
+
+<h1>📘 JavaScript Array & Methods Guide</h1>
+
+<p>
+This repository contains a complete and practical explanation of
+<strong>JavaScript Arrays</strong> and their commonly used methods with
+real-life examples.
+</p>
+
+<hr>
+
+<h2>📌 Topics Covered</h2>
+<ul>
+  <li>Array Creation & Access</li>
+  <li>push(), pop(), shift(), unshift()</li>
+  <li>splice() vs slice()</li>
+  <li>sort() & reverse()</li>
+  <li>forEach()</li>
+  <li>map()</li>
+  <li>filter()</li>
+  <li>reduce()</li>
+  <li>find(), some(), every()</li>
+  <li>Destructuring</li>
+  <li>Spread Operator</li>
+</ul>
+
+<hr>
+
+<h2>🧩 Array Basics</h2>
+<pre>
+let arr = [1, 2, 3, 4];
+</pre>
+
+<ul>
+  <li>Index starts from <strong>0</strong></li>
+  <li>Access value using <code>arr[index]</code></li>
+  <li>Arrays can store mixed data types</li>
+</ul>
+
+<hr>
+
+<h2>➕ push() & ➖ pop()</h2>
+<pre>
+let fruits = ["Apple", "Banana"];
+fruits.push("Mango"); // Add at end
+fruits.pop();         // Remove from end
+</pre>
+
+<p><strong>Use case:</strong> Product list, To-Do app</p>
+
+<hr>
+
+<h2>⬅ shift() & ➡ unshift()</h2>
+<pre>
+let queue = ["A", "B", "C"];
+queue.shift();     // Remove first
+queue.unshift("X"); // Add at first
+</pre>
+
+<p><strong>Use case:</strong> Queue systems, notifications</p>
+
+<hr>
+
+<h2>✂ splice()</h2>
+<p>Modify the original array</p>
+<pre>
+let nums = [10, 20, 30, 40];
+nums.splice(1, 2); // Removes 20, 30
+</pre>
+
+<hr>
+
+<h2>📄 slice()</h2>
+<p>Create a new array without changing original</p>
+<pre>
+let nums = [10, 20, 30, 40];
+let copy = nums.slice(1, 3);
+</pre>
+
+<hr>
+
+<h2>🔁 reverse()</h2>
+<pre>
+let levels = ["Easy", "Medium", "Hard"];
+levels.reverse();
+</pre>
+
+<hr>
+
+<h2>🔢 sort()</h2>
+<pre>
+let prices = [199, 49, 999];
+prices.sort((a, b) => a - b);
+</pre>
+
+<p><strong>Note:</strong> Always use compare function for numbers</p>
+
+<hr>
+
+<h2>🔄 forEach()</h2>
+<p>Loop through array values (no return)</p>
+<pre>
+arr.forEach(val => {
+  console.log(val);
+});
+</pre>
+
+<hr>
+
+<h2>🧠 map()</h2>
+<p>Create a new transformed array</p>
+<pre>
+let nums = [1, 2, 3];
+let doubled = nums.map(n => n * 2);
+</pre>
+
+<hr>
+
+<h2>🎯 filter()</h2>
+<p>Create a new array based on condition</p>
+<pre>
+let prices = [200, 500, 800];
+let expensive = prices.filter(p => p > 300);
+</pre>
+
+<hr>
+
+<h2>🧮 reduce()</h2>
+<p>Convert array into a single value</p>
+<pre>
+let nums = [10, 20, 30];
+let total = nums.reduce((sum, n) => sum + n, 0);
+</pre>
+
+<hr>
+
+<h2>🔍 find() vs filter()</h2>
+<pre>
+let users = ["A", "B", "C", "B"];
+users.find(u => u === "B");   // "B"
+users.filter(u => u === "B"); // ["B", "B"]
+</pre>
+
+<hr>
+
+<h2>✅ some() & every()</h2>
+<pre>
+nums.some(n => n > 50);  // true / false
+nums.every(n => n > 10); // true / false
+</pre>
+
+<hr>
+
+<h2>📦 Destructuring</h2>
+<pre>
+let data = ["Hitesh", "Surat"];
+let [name, city] = data;
+</pre>
+
+<hr>
+
+<h2>🧩 Spread Operator</h2>
+<pre>
+let a = [1, 2];
+let b = [3, 4];
+let c = [...a, ...b];
+</pre>
+
+<hr>
+
+<h2>🎓 Best For</h2>
+<ul>
+  <li>BCA / MCA Students</li>
+  <li>JavaScript Beginners</li>
+  <li>Interview Preparation</li>
+  <li>Frontend Developers</li>
+</ul>
+
+<hr>
+
+<h2>🚀 Author</h2>
+<p>
+<strong>Name:</strong> Hitesh Dabhoya <br>
+<strong>Course:</strong> BCA <br>
+<strong>Subject:</strong> JavaScript
+</p>
+
+<hr>
 </body>
 </html>
 
