@@ -352,15 +352,15 @@ abcdefg(function(){
 // Why : map() accepts a function as an argument
 
 
-// // Example 16 :
-// // Pure or Impure function?
+// Example 16 :
+// Pure or Impure function?
 let total = 5;
 function num(num){
     total += num;
 }
 num(3);
-// // Answer : 8
-// // Why : It modifies external variable and causes side effects
+// Answer : 8
+// Why : It modifies external variable and causes side effects
 
 
 // // Example 17 :
@@ -452,6 +452,96 @@ function temp_var(){
 }
 // // Answer : Hello
 // // Why : Function declaration is fully hoisted
+
+
+
+// ****************************************** examples ******************************************
+
+// Example 1 :
+// 1. `.find()` – First even number **Real life:** Find first available even seat number
+const seats = [3, 5, 8, 10, 7];
+const firstEvenSeat = seats.find(seat => seat % 2 === 0);
+
+// Answer : 8
+// Why : .find() returns the FIRST element that satisfies the condition
+
+// Example 2 :
+// 2. `.some()` – Any even number? **Real life:** Check if any VIP seat exists
+const seats1 = [3, 5, 7, 9];
+const hasEvenSeat = seats1.some(seat => seat % 2 === 0);
+
+// Answer : False
+// Why : .some() returns true only if AT LEAST ONE element matches the condition
+
+
+// Example 3 :
+//3. `.find()` – First passing mark  **Real life:** Find first student who passed
+const marks = [25, 35, 40, 60];
+const firstPass = marks.find(mark => mark >= 40);
+
+// Answer : 40
+// Why : .find() stops and returns the first value that meets the condition
+
+// Example 4 :
+// 4. `.some()` – Any failed student? **Real life:** Check if re-test is needed
+const marks1 = [60, 70, 55, 30];
+const hasFail = marks.some(mark => mark < 40);
+
+// Answer : true
+// Why : .some() checks if any value satisfies the condition
+
+
+ // Example 5 :
+ //5. `.find()` – First affordable product **Real life:** Shopping app price filter
+const prices = [1500, 1200, 800, 2000];
+const affordable = prices.find(price => price <= 1000);
+
+// Answer : 800
+// Why : .find() returns the first matching element
+
+// Example 6 :
+// 6. `.some()` – Any discount item? **Real life:** Show discount banner
+const prices1 = [500, 800, 1200, 300];
+const hasDiscountItem = prices.some(price => price < 500);
+
+// Answer : False
+// Why : At least one item (300) matches the condition
+
+
+// Example 7 :
+// 7. `.find()` – First long word **Real life:** Auto-suggestion keyword
+const words = ['hi', 'hello', 'javascript', 'ok'];
+const longWord = words.find(word => word.length > 5);
+
+// Answer : "javascript"
+// Why : It is the first word whose length is greater than 5
+
+
+// Example 8 :
+// 8. `.some()` – Any empty input? **Real life:** Form validation
+const inputs = ['name', 'email', '', 'password'];
+const hasEmpty = inputs.some(input => input === '');
+
+// Answer : true
+// Why : .some() returns true when at least one empty string is found
+
+
+// Example 9 :
+// 9. `.find()` – First high transaction **Real life:** Fraud detection
+const transactions = [200, 500, 1200, 3000, 400];
+const highTransaction = transactions.find(amount => amount > 1000);
+
+// Answer : 1200
+// Why : .find() returns the first value greater than 1000
+
+
+// Example 10 :
+// 10. `.some()` – System alert check **Real life:** Check if any value exceeds limit
+const temperatures = [30, 32, 35, 42, 36];
+const isOverheated = temperatures.some(temp => temp > 40);
+
+// Answer : true
+// Why : Temperature 42 exceeds the limit
 
 
 

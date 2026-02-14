@@ -1150,3 +1150,5 @@ let arr9 = [...arr8];
 let temp_arr = [1, 2, 3];
 let temp_arr2 = [4, 5, 6];
 let mix_arr = [...temp_arr, ...temp_arr2];
+
+
