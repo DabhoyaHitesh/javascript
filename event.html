@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event in JS</title>
+    <style>
+        .bg-body{
+            background: #000;
+        }
+        #btn1{
+            background-color: #222;
+            color: #555;
+            border: none;
+            margin-top: 10px;
+            padding: 6px 6px;
+            font-size: 1rem;
+            font-weight: 900;
+            border-radius: 7px;
+        }
+
+        .upload{
+            display: none;
+        }
+        .color-box{
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+        .color-card{
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+        }
+        .card{
+            width: 100px;
+            height: 100px;
+            background-color: black;
+        }
+        .card-hover{
+            border-radius: 12px;
+            border: 1px solid darkred;
+            background-color: rgba(98,6,6,0.294);
+        }
+        .outer_box{
+            width: 300px;
+            height: 300px;
+            background-color: cadetblue;
+            margin-top: 20px;
+        }
+        .inner_box{
+            width: 200px;
+            height: 200px;
+            background-color: chartreuse;
+        }
+        .line{
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    
+    <button>Light Mode</button>
+    <input type="text">
+    <select >
+        <option value="white">White</option>
+        <option value="blue">Blue</option>
+        <option value="red">Red</option>
+    </select>
+
+    <input type="file" name="" id="">
+    <input type="file" class="upload">
+    <button id="btn1">Upload Files</button>
+
+    <div class="color-box"></div>
+    <input type="color" name="" id="clr">
+    <!-- <input type="color" name="" id="bdr"> -->
+
+    <form action="">
+        <input type="text" placeholder="username">
+       <input type="submit" value="submit">
+    </form>
+    <!-- <div class="color-card"></div> -->
+    <div class="card"></div>
+
+    <div class="outer_box">
+        <div class="inner_box">
+            <button class="btn2">Click me</button>
+        </div>
+    </div>
+
+    <!-- To Do List -->
+     <h2>To Do List</h2>
+     <p><b>Shopping List</b></p>
+     <ul class="list" type="none">
+        <li><input type="checkbox" class="check" />Keyboard</li>
+        <li><input type="checkbox" class="check" />Mouse</li>
+        <li><input type="checkbox" class="check" />Shoes</li>
+        <li><input type="checkbox" class="check" />Mobile Phone</li>
+        <li><input type="checkbox" class="check" />Wifi Router</li>
+     </ul>
+
+     <input type="text"  id="counter">
+     <h3>Text Limit Left : <i id="count">10</i></h3>
+
+    <script src="event.js"></script>
+</body>
+</html>
